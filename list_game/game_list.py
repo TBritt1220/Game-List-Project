@@ -1,6 +1,5 @@
 """
 Author: Taiwan Britt
-Date: 12/23/2022
 """
 # Establish the initial values in the list to start the game
 my_games = [0, 1, 2]
@@ -27,18 +26,15 @@ def game_on_choice():
     """
     Creating an interactive menu to give the user an option to continue playing the game or end it
     """
-    # Displayed to the user for choosing invalid answer to the question
-    choice = 'Wrong'
-
-    while choice.upper() not in ['Y', 'N']:
-        # ask the user if they want to continue playing
-        choice = input("keep playing?(Y or N) ")
-        # check if choice is Y or N
-        print("Sorry, I don't understand, please choose Y or N ") \
-            if choice.upper() not in ['Y', 'N'] else print('')
-
-    # Boolean value to determine the next steps to be taken in response to the user decision
-    return True if choice.upper() == 'Y' else False
+    while True:
+        choice = input("keep playing (Y or N): ")
+        if choice.upper() == 'Y':
+            return True
+        elif choice.upper() == 'N':
+            print("game has ended")
+            return False
+        else:
+            continue
 
 
 # User feedback established by the While If loop if user makes invalid & valid input
@@ -53,3 +49,5 @@ while game_on:
     replacement_choice(my_games)
     # Does the user want to continue playing the game?
     game_on = game_on_choice()
+    if not game_on:
+        break
