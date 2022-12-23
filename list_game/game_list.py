@@ -1,3 +1,6 @@
+"""
+Author: Taiwan Britt
+"""
 # Establish the initial values in the list to start the game
 my_games = [0, 1, 2]
 other_games = [3, 4, 5]
